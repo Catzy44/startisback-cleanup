@@ -31,7 +31,7 @@ foreach($key in $keys) {
         continue
     }
 
-    #Remove-Item -Path ('Registry::' + $key)
+    Remove-Item -Path ('Registry::' + $key)
     echo ('deleting:  ' + $key)
 }
 echo ''
