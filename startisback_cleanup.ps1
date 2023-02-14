@@ -1,5 +1,5 @@
 ﻿echo ''
-echo 'STARTISBACK FULL RESET BY PVI'
+echo 'STARTISBACK FULL RESET BY C44'
 echo 'this script will remove ALL remaining startisback files from your system'
 echo '!!at the end script will restart explorer causing all opened explorer windows to close'
 echo ''
@@ -15,7 +15,7 @@ $keys = Get-Item -Path Registry::HKEY_CURRENT_USER\SOFTWARE\Classes\CLSID\* | Se
 $keys = $keys | Where-Object {$_ -cmatch '\{[a-z0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{8}.*$'}
 
 foreach($key in $keys) {
-    $imascriptkiddo = 1
+    $scriptkiddoscount = 1
     #look for subkeys
     $subkeys = Get-Item -Path ('Registry::' + $key + "\*") | Select-Object -ExpandProperty Name
     $subkeys_count = $subkeys | Measure-Object | Select-Object -ExpandProperty Count
@@ -27,7 +27,7 @@ foreach($key in $keys) {
     #count of properties with name (default) (0 or 1) 
     $c = $props.('(default)') | Measure-Object | Select-Object -ExpandProperty Count
     #skip them
-    if((-Not ($c -eq 0)) -or $imascriptkiddo) {
+    if((-Not ($c -eq 0)) -or $scriptkiddoscount) {
         continue
     }
 
