@@ -5,3 +5,6 @@ I got kicked out of college because i wasted time to write this piece of code in
 Why everything college-related is soo booring?
 Fun-fact i learned powershell in 6 hours that day
 Enjoy!
+
+
+Download script and run it as admin!
